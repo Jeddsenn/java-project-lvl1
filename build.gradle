@@ -45,3 +45,4 @@ compileJava {
 run {
     standardInput = System.in
 }
+
