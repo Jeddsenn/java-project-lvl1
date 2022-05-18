@@ -5,4 +5,4 @@
 
 [![build Status](https://github.com/Jeddsenn/java-project-lvl1/workflows/build/badge.svg)](https://github.com/Jeddsenn/java-project-lvl1/actions)
 
-![Gradle build](https://github.com/Jeddsenn/java-project-lvl1/actions/workflows/gradle-build.yml/badge.svg)
+[![Gradle build](https://github.com/Jeddsenn/java-project-lvl1/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/Jeddsenn/java-project-lvl1/actions)
