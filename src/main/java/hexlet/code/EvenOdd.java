@@ -8,7 +8,7 @@ public class EvenOdd {
     private static final int SCORE = 3;
     private static final int MIN = 1;
     private static final int MAX = 100;
-    private static final String questionEvenGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String QUESTIONEVENGAME = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runEvenGame() {
         System.out.print("May I have your name? ");
@@ -23,7 +23,7 @@ public class EvenOdd {
             questionAndAnswer[i][0] = String.valueOf(number);
             questionAndAnswer[i][1] = ((number % 2) == 0) ? "yes" : "no";
         }
-        System.out.println(questionEvenGame);
+        System.out.println(QUESTIONEVENGAME);
         for (int i = 0; i < SCORE; i++) {
             System.out.println("Question: " + questionAndAnswer[i][0]);
             String playerAnswer = scanner.nextLine();
