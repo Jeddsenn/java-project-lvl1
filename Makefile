@@ -4,3 +4,5 @@ lint:
 	./gradlew checkstyleMain checkstyleTest
 build:
 	./gradlew clean build
+clean:
+	./gradlew clean

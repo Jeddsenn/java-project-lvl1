@@ -1,29 +1,23 @@
+
 package hexlet.code;
+
 
 import java.util.Scanner;
 
-
-public class EvenOdd {
-
-    private static final int SCORE = 3;
+public class Engine {
     private static final int MIN = 1;
     private static final int MAX = 100;
-    private static final String QUESTIONEVENGAME = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int SCORE = 3;
+    private static final int COUNTOFRANDOMOPERATORS = 3;
 
-    public static void runEvenGame() {
+
+    public static void runGameEngine(String question, String[][] questionAndAnswer) {
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
 
 
-        String[][] questionAndAnswer = new String[SCORE][SCORE];
-        for (int i = 0; i < SCORE; i++) {
-            int number = (int) ((Math.random() * (MAX - MIN)) + MIN);
-            questionAndAnswer[i][0] = String.valueOf(number);
-            questionAndAnswer[i][1] = ((number % 2) == 0) ? "yes" : "no";
-        }
-        System.out.println(QUESTIONEVENGAME);
         for (int i = 0; i < SCORE; i++) {
             System.out.println("Question: " + questionAndAnswer[i][0]);
             String playerAnswer = scanner.nextLine();
@@ -35,8 +29,18 @@ public class EvenOdd {
                     + "'" + questionAndAnswer[i][1] + "'" + ". Let's try again, " + userName + "!");
                 return;
             }
+            System.out.println("Congrtulations, " + userName + "!");
         }
-        System.out.println("Congrtulations, " + userName + "!");
+    }
+
+    public static int getRandomNumber() {
+        int number = (int) ((Math.random() * (MAX - MIN)) + MIN);
+        return number;
+    }
+
+    public static String getRandomOperator() {
+        String[] operators = {"+", "-", "*"};
+        int i = (int) (Math.random() * COUNTOFRANDOMOPERATORS);
+        return operators[i];
     }
 }
-
