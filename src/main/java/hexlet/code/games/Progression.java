@@ -14,7 +14,7 @@ public class Progression {
 
     private static final String QUESTION = "What number is missing in the progression?";
 
-    private static final String REPLACEMENT = "??";
+    private static final String REPLACEMENT = "..";
 
 
     public static void runProgressionGame() {
