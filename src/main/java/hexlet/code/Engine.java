@@ -34,7 +34,7 @@ public class Engine {
                 return;
             }
         }
-        System.out.println("Congrtulations, " + userName + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 
     public static int getRandomNumber() {
