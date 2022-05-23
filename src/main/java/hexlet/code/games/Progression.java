@@ -25,10 +25,10 @@ public class Progression {
             int sequenceRandomStep = getRandomNumberSeq();
             int[] arithmeticSequence = generateArithmeticSequence(firstNumberInSequence, sequenceRandomStep);
             int answer = getRandomNumberSeq();
-            String trueAnwser = String.valueOf(arithmeticSequence[answer]);
+            String trueAnswer = String.valueOf(arithmeticSequence[answer]);
             String questionSequence = hideSequence(arithmeticSequence, answer);
             questionAndAnswer[i][0] = questionSequence;
-            questionAndAnswer[i][1] = trueAnwser;
+            questionAndAnswer[i][1] = trueAnswer;
 
         }
         runGameEngine(QUESTION, questionAndAnswer);

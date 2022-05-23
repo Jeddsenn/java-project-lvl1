@@ -30,6 +30,7 @@ public class App {
                 break;
             case "5":
                 runProgressionGame();
+                break;
             case "6":
                 runPrimeGame();
                 break;
