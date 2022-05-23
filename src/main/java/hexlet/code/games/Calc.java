@@ -18,7 +18,7 @@ public class Calc {
             int number = getRandomNumber();
             int number2 = getRandomNumber();
             String opetaror = getRandomOperator();
-            String calcQuestion = number + "" + opetaror + "" + number2;
+            String calcQuestion = (number + "" + opetaror + "" + number2);
 
             questionAndAnswer[i][0] = calcQuestion;
             questionAndAnswer[i][1] = String.valueOf(calculateTwoRandomNumbers(opetaror, number, number2));
@@ -27,7 +27,7 @@ public class Calc {
     }
 
     public static int calculateTwoRandomNumbers(String operator, int number, int number2) {
-        var answer = 0;
+        int answer = 0;
         switch (operator) {
             case "+":
                 answer = number + number2;
@@ -37,6 +37,7 @@ public class Calc {
                 break;
             case "*":
                 answer = number * number2;
+                break;
             default:
                 System.out.println("Something gone wrong while generating operator");
         }
