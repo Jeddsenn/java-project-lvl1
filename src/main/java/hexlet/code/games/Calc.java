@@ -17,11 +17,11 @@ public class Calc {
         for (int i = 0; i < SCORE; i++) {
             int number = getRandomNumber();
             int number2 = getRandomNumber();
-            String opetaror = getRandomOperator();
-            String calcQuestion = (number + "" + opetaror + "" + number2);
+            String operator = getRandomOperator();
+            String calcQuestion = Integer.toString(number) + "" + operator + "" + Integer.toString(number2);
 
             questionAndAnswer[i][0] = calcQuestion;
-            questionAndAnswer[i][1] = String.valueOf(calculateTwoRandomNumbers(opetaror, number, number2));
+            questionAndAnswer[i][1] = String.valueOf(calculateTwoRandomNumbers(operator, number, number2));
         }
         runGameEngine(QUESTION, questionAndAnswer);
     }
@@ -40,6 +40,7 @@ public class Calc {
                 break;
             default:
                 System.out.println("Something gone wrong while generating operator");
+                break;
         }
         return answer;
     }
