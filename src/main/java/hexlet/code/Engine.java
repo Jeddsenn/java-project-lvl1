@@ -11,7 +11,7 @@ public class Engine {
     private static final int MINPRGR = 2;
     private static final int MAXPRGR = 10;
     private static final int SCORE = 3;
-    private static final int COUNTOFRANDOMOPERATORS = 2;
+    private static final int COUNTOFRANDOMOPERATORS = 3;
 
 
     public static void runGameEngine(String question, String[][] questionAndAnswer) {
@@ -48,8 +48,8 @@ public class Engine {
 
 
 
-    public static String getRandomOperator() {
-        String[] operators = {"+", "-", "*"};
+    public static char getRandomOperator() {
+        char[] operators = {'+', '-', '*'};
         int i = (int) (Math.random() * COUNTOFRANDOMOPERATORS);
         return operators[i];
     }

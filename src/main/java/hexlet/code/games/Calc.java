@@ -17,8 +17,8 @@ public class Calc {
         for (int i = 0; i < SCORE; i++) {
             int number = getRandomNumber();
             int number2 = getRandomNumber();
-            String operator = getRandomOperator();
-            String calcQuestion = Integer.toString(number) + "" + operator + "" + Integer.toString(number2);
+            char operator = getRandomOperator();
+            String calcQuestion = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
 
             questionAndAnswer[i][0] = calcQuestion;
             questionAndAnswer[i][1] = String.valueOf(calculateTwoRandomNumbers(operator, number, number2));
@@ -26,16 +26,16 @@ public class Calc {
         runGameEngine(QUESTION, questionAndAnswer);
     }
 
-    public static int calculateTwoRandomNumbers(String operator, int number, int number2) {
+    public static int calculateTwoRandomNumbers(char operator, int number, int number2) {
         int answer = 0;
         switch (operator) {
-            case "+":
+            case '+':
                 answer = number + number2;
                 break;
-            case "-":
+            case '-':
                 answer = number - number2;
                 break;
-            case "*":
+            case '*':
                 answer = number * number2;
                 break;
             default:
