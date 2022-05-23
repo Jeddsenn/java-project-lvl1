@@ -47,6 +47,6 @@ public class Progression {
     public static String hideSequence(int[] arithmeticSequence, int answer) {
         String sequenceVar = Arrays.toString(arithmeticSequence);
         String variableInSequenceToHide = String.valueOf(arithmeticSequence[answer]);
-        return sequenceVar.replace(variableInSequenceToHide, REPLACEMENT);
+        return sequenceVar.replace(variableInSequenceToHide, REPLACEMENT).replaceAll(",", "");
     }
 }
