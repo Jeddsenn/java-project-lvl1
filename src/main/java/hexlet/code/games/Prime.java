@@ -6,22 +6,19 @@ import static hexlet.code.Engine.runGameEngine;
 
 public class Prime {
     private static final int SCORE = 3;
+    private static final int ANWSERSCORE = 2;
+
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runPrimeGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][2];
+        String[][] questionAndAnswer = new String[SCORE][ANWSERSCORE];
         for (int i = 0; i < SCORE; i++) {
             int number = getRandomNumber();
             String question = String.valueOf(number);
-
             String anwser = checkIfPrime(number);
-
-
-
             questionAndAnswer[i][0] = question;
             questionAndAnswer[i][1] = anwser;
-
         }
         runGameEngine(QUESTION, questionAndAnswer);
     }

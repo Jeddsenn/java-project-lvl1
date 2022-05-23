@@ -20,7 +20,7 @@ public class Engine {
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
 
-
+        System.out.println(question);
         for (int i = 0; i < SCORE; i++) {
             System.out.println("Question: " + questionAndAnswer[i][0]);
             String playerAnswer = scanner.nextLine();
@@ -32,18 +32,16 @@ public class Engine {
                     + "'" + questionAndAnswer[i][1] + "'" + ". Let's try again, " + userName + "!");
                 return;
             }
-            System.out.println("Congrtulations, " + userName + "!");
         }
+        System.out.println("Congrtulations, " + userName + "!");
     }
 
     public static int getRandomNumber() {
-        int number = (int) ((Math.random() * (MAX - MIN)) + MIN);
-        return number;
+        return (int) ((Math.random() * (MAX - MIN)) + MIN);
     }
 
     public static int getRandomNumberSeq() {
-        int number = (int) ((Math.random() * (MAXPRGR - MINPRGR)) + MINPRGR);
-        return number;
+        return (int) ((Math.random() * (MAXPRGR - MINPRGR)) + MINPRGR);
     }
 
 

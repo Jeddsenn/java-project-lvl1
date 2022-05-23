@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static hexlet.code.Cli.getTheName;
 import static hexlet.code.games.Calc.runCalculateGame;
-import static hexlet.code.games.EvenOdd.runEvenGame;
+import static hexlet.code.games.Even.runEvenGame;
 import static hexlet.code.games.GCD.runGCD;
 import static hexlet.code.games.Prime.runPrimeGame;
 import static hexlet.code.games.Progression.runProgressionGame;

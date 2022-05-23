@@ -9,46 +9,44 @@ import static hexlet.code.Engine.runGameEngine;
 public class Progression {
 
     private static final int SCORE = 3;
-    private static final String QUESTION = "What number is missing in the progression?\n";
     private static final int SEQUENCELENGTH = 10;
+    private static final int ANWSERSCORE = 2;
+
+    private static final String QUESTION = "What number is missing in the progression?";
+
     private static final String REPLACEMENT = "??";
 
 
     public static void runProgressionGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][2];
+        String[][] questionAndAnswer = new String[SCORE][ANWSERSCORE];
         for (int i = 0; i < SCORE; i++) {
-            int number = getRandomNumber();
-
+            int firstNumberInSequence = getRandomNumber();
             int sequenceRandomStep = getRandomNumberSeq();
-            int[] originalSequence = generateArithmetcSequence(number, sequenceRandomStep);
-
+            int[] arithmeticSequence = generateArithmeticSequence(firstNumberInSequence, sequenceRandomStep);
             int answer = getRandomNumberSeq();
-            String realAnswer = String.valueOf(originalSequence[answer]);
-
-            String questionSequence = hideSequence(originalSequence, answer);
+            String trueAnwser = String.valueOf(arithmeticSequence[answer]);
+            String questionSequence = hideSequence(arithmeticSequence, answer);
             questionAndAnswer[i][0] = questionSequence;
-            questionAndAnswer[i][1] = realAnswer;
+            questionAndAnswer[i][1] = trueAnwser;
 
         }
         runGameEngine(QUESTION, questionAndAnswer);
     }
 
-
-    public static int[] generateArithmetcSequence(int number, int number2) {
+    public static int[] generateArithmeticSequence(int number, int number2) {
         int[] arithmeticSequence = new int[SEQUENCELENGTH];
-        int currTerm = number;
+        int currenTerm = number;
         for (int i = 0; i < arithmeticSequence.length; i++) {
-            arithmeticSequence[i] = currTerm;
-            currTerm = currTerm + number2;
+            arithmeticSequence[i] = currenTerm;
+            currenTerm = currenTerm + number2;
         }
         return arithmeticSequence;
     }
 
-    public static String hideSequence(int[] originalSequence, int answer) {
-        String sequence = Arrays.toString(originalSequence);
-        String varibleToChange = String.valueOf(originalSequence[answer]);
-        String replaceString = sequence.replace(varibleToChange, REPLACEMENT);
-        return replaceString;
+    public static String hideSequence(int[] arithmeticSequence, int answer) {
+        String sequenceVar = Arrays.toString(arithmeticSequence);
+        String variableInSequenceToHide = String.valueOf(arithmeticSequence[answer]);
+        return sequenceVar.replace(variableInSequenceToHide, REPLACEMENT);
     }
 }
