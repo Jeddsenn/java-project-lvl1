@@ -14,10 +14,11 @@ public class App {
         System.out.print("Please enter the game number and press Enter. \n 1 - Greet"
             + " \n 2 - Even \n 3 - Calc \n 4 - GCD \n 5 - Progression \n 6 - Prime  \n 0 - Exit \n ");
         Scanner scannerGameChoose = new Scanner(System.in);
-        String userName = scannerGameChoose.nextLine();
-        switch (userName) {
+        String input = scannerGameChoose.nextLine();
+        switch (input) {
             case "1":
                 getTheName();
+                break;
             case "2":
                 runEvenGame();
                 break;
