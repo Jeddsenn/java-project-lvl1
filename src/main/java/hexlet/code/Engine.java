@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Engine {
     private static final int MIN = 1;
     private static final int MAX = 100;
+
+    private static final int MINPRGR = 2;
+    private static final int MAXPRGR = 10;
     private static final int SCORE = 3;
     private static final int COUNTOFRANDOMOPERATORS = 3;
 
@@ -37,6 +40,14 @@ public class Engine {
         int number = (int) ((Math.random() * (MAX - MIN)) + MIN);
         return number;
     }
+
+    public static int getRandomNumberSeq() {
+        int number = (int) ((Math.random() * (MAXPRGR - MINPRGR)) + MINPRGR);
+        return number;
+    }
+
+
+
 
     public static String getRandomOperator() {
         String[] operators = {"+", "-", "*"};
