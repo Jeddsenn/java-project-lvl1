@@ -15,6 +15,7 @@ public class Engine {
 
 
     public static void runGameEngine(String question, String[][] questionAndAnswer) {
+        System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
