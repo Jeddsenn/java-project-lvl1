@@ -12,15 +12,16 @@ import static hexlet.code.games.Progression.runProgressionGame;
 public class App {
     public static void main(String[] args) {
         System.out.print(
-            "Please enter the game number and press Enter. \n" +
-                " 1 - Greet \n" +
-                " 2 - Even \n" +
-                " 3 - Calc \n" +
-                " 4 - GCD \n" +
-                " 5 - Progression \n" +
-                " 6 - Prime  \n" +
-                " 0 - Exit \n" +
-                " ");
+            """
+                Please enter the game number and press Enter.\s
+                 1 - Greet\s
+                 2 - Even\s
+                 3 - Calc\s
+                 4 - GCD\s
+                 5 - Progression\s
+                 6 - Prime \s
+                 0 - Exit\s
+                \s""");
         Scanner scannerGameChoose = new Scanner(System.in);
         String input = scannerGameChoose.nextLine();
         switch (input) {
