@@ -34,12 +34,12 @@ public class Progression {
         runGameEngine(QUESTION, questionAndAnswer);
     }
 
-    public static int[] generateArithmeticSequence(int number, int number2) {
+    public static int[] generateArithmeticSequence(int firstNumberInSequence, int sequenceRandomStep) {
         int[] arithmeticSequence = new int[SEQUENCELENGTH];
-        int currenTerm = number;
+        int currentTerm = firstNumberInSequence;
         for (int i = 0; i < arithmeticSequence.length; i++) {
-            arithmeticSequence[i] = currenTerm;
-            currenTerm = currenTerm + number2;
+            arithmeticSequence[i] = currentTerm;
+            currentTerm += sequenceRandomStep;
         }
         return arithmeticSequence;
     }

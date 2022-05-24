@@ -8,12 +8,12 @@ import static hexlet.code.Engine.runGameEngine;
 public class Calc {
 
     private static final int SCORE = 3;
-    private static final int ANWSERSCORE = 2;
+    private static final int ANSWERSCORE = 2;
     private static final String QUESTION = "What is the result of the expression?";
 
     public static void runCalculateGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][ANWSERSCORE];
+        String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
         for (int i = 0; i < SCORE; i++) {
             int number = getRandomNumber();
             int number2 = getRandomNumber();

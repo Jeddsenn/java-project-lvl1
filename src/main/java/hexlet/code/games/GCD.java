@@ -7,17 +7,17 @@ import static hexlet.code.Engine.runGameEngine;
 public class GCD {
     private static final int SCORE = 3;
     private static final String QUESTION = "Find the greatest common divisor of given numbers.";
-    private static final int ANWSERSCORE = 2;
+    private static final int ANSWERSCORE = 2;
 
 
     public static void runGCD() {
 
-        String[][] questionAndAnswer = new String[SCORE][ANWSERSCORE];
+        String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
         for (int i = 0; i < SCORE; i++) {
             int number = getRandomNumber();
             int number2 = getRandomNumber();
-            String calcQuestion = number + " " + number2;
-            questionAndAnswer[i][0] = calcQuestion;
+            String gcdQuestion = number + " " + number2;
+            questionAndAnswer[i][0] = gcdQuestion;
             questionAndAnswer[i][1] = String.valueOf(findGCD(number, number2));
         }
         runGameEngine(QUESTION, questionAndAnswer);
