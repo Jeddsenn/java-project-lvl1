@@ -5,6 +5,12 @@
 
 [![build Status](https://github.com/Jeddsenn/java-project-lvl1/workflows/build/badge.svg)](https://github.com/Jeddsenn/java-project-lvl1/actions)
 
-[![asciicast](https://asciinema.org/a/D9n4qq0659e59T5Wy36Dj3qV2.svg)](https://asciinema.org/a/D9n4qq0659e59T5Wy36Dj3qV2)
+[![asciicast](https://asciinema.org/a/I7KjCo2HoART0xnu3xVjNKAqr.svg)](https://asciinema.org/a/I7KjCo2HoART0xnu3xVjNKAqr)
 
+[![asciicast](https://asciinema.org/a/JQDjDChzpyZd1zhGSvPptHe7a.svg)](https://asciinema.org/a/JQDjDChzpyZd1zhGSvPptHe7a)
 
+[![asciicast](https://asciinema.org/a/odsZH2UBrhZvmfpRKMLBuHCl2.svg)](https://asciinema.org/a/odsZH2UBrhZvmfpRKMLBuHCl2)
+
+[![asciicast](https://asciinema.org/a/KYKE3YOn6ieClRPfC5a4dqXlh.svg)](https://asciinema.org/a/KYKE3YOn6ieClRPfC5a4dqXlh)
+
+[![asciicast](https://asciinema.org/a/7WAEqjL1Ynd9mqaKhGUgW9jEZ.svg)](https://asciinema.org/a/7WAEqjL1Ynd9mqaKhGUgW9jEZ)
