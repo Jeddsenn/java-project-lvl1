@@ -16,14 +16,14 @@ public class Prime {
         for (int i = 0; i < SCORE; i++) {
             int number = getRandomNumber();
             String question = String.valueOf(number);
-            String answer = checkIfPrime(number);
+            String answer = isPrime(number);
             questionAndAnswer[i][0] = question;
             questionAndAnswer[i][1] = answer;
         }
         runGameEngine(QUESTION, questionAndAnswer);
     }
 
-    public static String checkIfPrime(int number) {
+    public static String isPrime(int number) {
         int i = 2;
         boolean flag = false;
         while (i <= number / 2) {
