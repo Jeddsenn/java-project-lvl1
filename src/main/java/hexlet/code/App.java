@@ -1,13 +1,12 @@
 package hexlet.code;
 
-import java.util.Scanner;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
-import static hexlet.code.Cli.getTheName;
-import static hexlet.code.games.Calc.runCalculateGame;
-import static hexlet.code.games.Even.runEvenGame;
-import static hexlet.code.games.GCD.runGCD;
-import static hexlet.code.games.Prime.runPrimeGame;
-import static hexlet.code.games.Progression.runProgressionGame;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -22,26 +21,26 @@ public class App {
                  6 - Prime \s
                  0 - Exit\s
                 \s""");
-        Scanner scannerGameChoose = new Scanner(System.in);
-        String input = scannerGameChoose.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
         switch (input) {
             case "1":
-                getTheName();
+                Cli.greetUser();
                 break;
             case "2":
-                runEvenGame();
+                Even.runGame();
                 break;
             case "3":
-                runCalculateGame();
+                Calc.runGame();
                 break;
             case "4":
-                runGCD();
+                GCD.runGame();
                 break;
             case "5":
-                runProgressionGame();
+                Progression.runGame();
                 break;
             case "6":
-                runPrimeGame();
+                Prime.runGame();
                 break;
             case "0":
                 System.out.println("SEE YOU NEXT TIME");

@@ -1,8 +1,9 @@
 package hexlet.code.games;
 
 
+import hexlet.code.Engine;
+
 import static hexlet.code.Engine.getRandomNumber;
-import static hexlet.code.Engine.runGameEngine;
 
 public class Prime {
     private static final int SCORE = 3;
@@ -10,7 +11,7 @@ public class Prime {
 
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void runPrimeGame() {
+    public static void runGame() {
 
         String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
         for (int i = 0; i < SCORE; i++) {
@@ -20,7 +21,7 @@ public class Prime {
             questionAndAnswer[i][0] = question;
             questionAndAnswer[i][1] = answer;
         }
-        runGameEngine(QUESTION, questionAndAnswer);
+        Engine.runGame(QUESTION, questionAndAnswer);
     }
 
     public static String isPrime(int number) {

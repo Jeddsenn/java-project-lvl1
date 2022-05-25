@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import static hexlet.code.Engine.getRandomNumber;
-import static hexlet.code.Engine.runGameEngine;
 
 
 public class GCD {
@@ -10,7 +11,7 @@ public class GCD {
     private static final int ANSWERSCORE = 2;
 
 
-    public static void runGCD() {
+    public static void runGame() {
 
         String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
         for (int i = 0; i < SCORE; i++) {
@@ -20,7 +21,7 @@ public class GCD {
             questionAndAnswer[i][0] = gcdQuestion;
             questionAndAnswer[i][1] = String.valueOf(findGCD(number, number2));
         }
-        runGameEngine(QUESTION, questionAndAnswer);
+        Engine.runGame(QUESTION, questionAndAnswer);
     }
 
     static int findGCD(int number, int number1) {

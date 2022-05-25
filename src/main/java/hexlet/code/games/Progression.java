@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Arrays;
 
 import static hexlet.code.Engine.getRandomNumber;
 import static hexlet.code.Engine.getRandomNumberSeq;
-import static hexlet.code.Engine.runGameEngine;
 
 public class Progression {
 
@@ -17,24 +18,24 @@ public class Progression {
     private static final String REPLACEMENT = "..";
 
 
-    public static void runProgressionGame() {
+    public static void runGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][ANWSERSCORE];
+        String[][] roundsData = new String[SCORE][ANWSERSCORE];
         for (int i = 0; i < SCORE; i++) {
-            int firstNumberInSequence = getRandomNumber();
-            int sequenceRandomStep = getRandomNumberSeq();
-            int[] arithmeticSequence = generateArithmeticSequence(firstNumberInSequence, sequenceRandomStep);
-            int answer = getRandomNumberSeq();
-            String trueAnswer = String.valueOf(arithmeticSequence[answer]);
-            String questionSequence = hideSequence(arithmeticSequence, answer);
-            questionAndAnswer[i][0] = questionSequence;
-            questionAndAnswer[i][1] = trueAnswer;
+            int firstNumber = getRandomNumber();
+            int step = getRandomNumberSeq();
+            int[] progression = generateProgression(firstNumber, step);
+            int indexToHide = getRandomNumberSeq();
+            String answer = String.valueOf(progression[indexToHide]);
+            String question = hideSequence(progression, indexToHide);
+            roundsData[i][0] = question;
+            roundsData[i][1] = answer;
 
         }
-        runGameEngine(QUESTION, questionAndAnswer);
+        Engine.runGame(QUESTION, roundsData);
     }
 
-    public static int[] generateArithmeticSequence(int firstNumberInSequence, int sequenceRandomStep) {
+    public static int[] generateProgression(int firstNumberInSequence, int sequenceRandomStep) {
         int[] arithmeticSequence = new int[SEQUENCELENGTH];
         int currentTerm = firstNumberInSequence;
         for (int i = 0; i < arithmeticSequence.length; i++) {
