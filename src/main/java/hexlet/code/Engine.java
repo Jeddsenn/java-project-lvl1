@@ -26,6 +26,7 @@ public class Engine {
             System.out.println("Question: " + gameData[i][0]);
             String playerAnswer = scanner.nextLine();
             System.out.println("Your answer: " + playerAnswer);
+
             if (playerAnswer.equals(gameData[i][1])) {
                 System.out.println("Correct!");
             } else {
@@ -34,6 +35,7 @@ public class Engine {
                 return;
             }
         }
+        scanner.close();
         System.out.println("Congratulations, " + userName + "!");
     }
 
