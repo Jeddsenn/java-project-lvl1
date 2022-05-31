@@ -2,19 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Utils.getRandomNumber;
 
 
 public class GCD {
-    private static final int SCORE = 3;
     private static final String QUESTION = "Find the greatest common divisor of given numbers.";
     private static final int ANSWERSCORE = 2;
 
 
     public static void runGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
-        for (int i = 0; i < SCORE; i++) {
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][ANSWERSCORE];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = getRandomNumber();
             int number2 = getRandomNumber();
             String gcdQuestion = number + " " + number2;
@@ -25,13 +24,10 @@ public class GCD {
     }
 
     static int findGCD(int number, int number1) {
-        int r = 0;
-        int a = 0;
-        int b = 0;
 
-        a = Math.max(number, number1);
-        b = Math.min(number, number1);
-        r = b;
+        int a = Math.max(number, number1);
+        int b = Math.min(number, number1);
+        int r = b;
         while (a % b != 0) {
             r = a % b;
             a = b;

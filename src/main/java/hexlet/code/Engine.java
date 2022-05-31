@@ -5,13 +5,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int MIN = 1;
-    private static final int MAX = 100;
 
-    private static final int MINPRGR = 2;
-    private static final int MAXPRGR = 10;
     public static final int ROUNDS_COUNT = 3;
-    private static final int COUNTOFRANDOMOPERATORS = 3;
 
 
     public static void runGame(String question, String[][] gameData) {
@@ -39,20 +34,5 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
     }
 
-    public static int getRandomNumber() {
-        return (int) ((Math.random() * (MAX - MIN)) + MIN);
-    }
 
-    public static int getRandomNumberSeq() {
-        return (int) ((Math.random() * (MAXPRGR - MINPRGR)) + MINPRGR);
-    }
-
-
-
-
-    public static char getRandomOperator() {
-        char[] operators = {'+', '-', '*'};
-        int i = (int) (Math.random() * COUNTOFRANDOMOPERATORS);
-        return operators[i];
-    }
 }

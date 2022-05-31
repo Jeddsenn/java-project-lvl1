@@ -3,18 +3,17 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Utils.getRandomNumber;
 
 public class Prime {
-    private static final int SCORE = 3;
     private static final int ANSWERSCORE = 2;
 
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
-        for (int i = 0; i < SCORE; i++) {
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][ANSWERSCORE];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = getRandomNumber();
             String question = String.valueOf(number);
             String answer = isPrime(number);

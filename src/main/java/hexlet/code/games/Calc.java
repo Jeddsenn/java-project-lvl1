@@ -1,23 +1,19 @@
 package hexlet.code.games;
 
-
 import hexlet.code.Engine;
-
-import static hexlet.code.Engine.getRandomNumber;
-import static hexlet.code.Engine.getRandomOperator;
+import hexlet.code.Utils;
 
 public class Calc {
 
-    private static final int SCORE = 3;
     private static final int ANSWERSCORE = 2;
     private static final String QUESTION = "What is the result of the expression?";
 
     public static void runGame() {
 
-        String[][] questionAndAnswer = new String[SCORE][ANSWERSCORE];
-        for (int i = 0; i < SCORE; i++) {
-            int number = getRandomNumber();
-            int number2 = getRandomNumber();
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][ANSWERSCORE];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            int number = Utils.getRandomNumber();
+            int number2 = Utils.getRandomNumber();
             char operator = getRandomOperator();
             String calcQuestion = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
 
@@ -31,18 +27,19 @@ public class Calc {
         int answer = 0;
         switch (operator) {
             case '+':
-                answer = number + number2;
-                break;
+                return number + number2;
             case '-':
-                answer = number - number2;
-                break;
+                return number - number2;
             case '*':
-                answer = number * number2;
-                break;
+                return number * number2;
             default:
-                System.out.println("Something gone wrong while generating operator");
-                break;
+                throw new IllegalArgumentException();
         }
-        return answer;
+    }
+
+    public static char getRandomOperator() {
+        char[] operators = {'+', '-', '*'};
+        int i = (int) (Math.random() * operators.length);
+        return operators[i];
     }
 }

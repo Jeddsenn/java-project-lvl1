@@ -4,12 +4,11 @@ import hexlet.code.Engine;
 
 import java.util.Arrays;
 
-import static hexlet.code.Engine.getRandomNumber;
-import static hexlet.code.Engine.getRandomNumberSeq;
+import static hexlet.code.Utils.getRandomNumber;
+import static hexlet.code.Utils.getRandomNumberSeq;
 
 public class Progression {
 
-    private static final int SCORE = 3;
     private static final int SEQUENCELENGTH = 10;
     private static final int ANWSERSCORE = 2;
 
@@ -20,8 +19,8 @@ public class Progression {
 
     public static void runGame() {
 
-        String[][] roundsData = new String[SCORE][ANWSERSCORE];
-        for (int i = 0; i < SCORE; i++) {
+        String[][] roundsData = new String[Engine.ROUNDS_COUNT][ANWSERSCORE];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = getRandomNumber();
             int step = getRandomNumberSeq();
             int[] progression = generateProgression(firstNumber, step);
