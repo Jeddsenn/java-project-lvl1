@@ -28,7 +28,7 @@ public class GCD {
         return gameData;
     }
 
-        static int findGCD(int number, int number1) {
+    static int findGCD(int number, int number1) {
 
         int a = Math.max(number, number1);
         int b = Math.min(number, number1);
