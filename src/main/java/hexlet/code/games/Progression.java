@@ -5,8 +5,6 @@ import hexlet.code.Utils;
 
 import java.util.Arrays;
 
-import static hexlet.code.Utils.getRandomNumber;
-
 public class Progression {
 
     private static final int SEQUENCE_LENGTH = 10;
@@ -37,8 +35,8 @@ public class Progression {
         Engine.runGame(QUESTION, roundsData);
     }
 
-    public static int[] generateProgression(int firstNumberInSequence, int sequenceRandomStep, int SEQUENCE_LENGTH) {
-        int[] arithmeticSequence = new int[SEQUENCE_LENGTH];
+    public static int[] generateProgression(int firstNumberInSequence, int sequenceRandomStep, int sequencelength) {
+        int[] arithmeticSequence = new int[sequencelength];
         int currentTerm = firstNumberInSequence;
         for (int i = 0; i < arithmeticSequence.length; i++) {
             arithmeticSequence[i] = currentTerm;
