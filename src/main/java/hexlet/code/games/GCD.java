@@ -12,19 +12,23 @@ public class GCD {
 
 
     public static void runGame() {
+        String[][] gameData = generateRoundData();
+        Engine.runGame(QUESTION, gameData);
+    }
 
-        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+    public static String[][] generateRoundData() {
+        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = getRandomNumber(MIN, MAX);
             int number2 = getRandomNumber(MIN, MAX);
             String gcdQuestion = number + " " + number2;
-            questionAndAnswer[i][0] = gcdQuestion;
-            questionAndAnswer[i][1] = String.valueOf(findGCD(number, number2));
+            gameData[i][0] = gcdQuestion;
+            gameData[i][1] = String.valueOf(findGCD(number, number2));
         }
-        Engine.runGame(QUESTION, questionAndAnswer);
+        return gameData;
     }
 
-    static int findGCD(int number, int number1) {
+        static int findGCD(int number, int number1) {
 
         int a = Math.max(number, number1);
         int b = Math.min(number, number1);

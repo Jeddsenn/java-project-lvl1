@@ -19,7 +19,11 @@ public class Progression {
 
 
     public static void runGame() {
+        String[][] gameData = generateRoundData();
+        Engine.runGame(QUESTION, gameData);
+    }
 
+    public static String[][] generateRoundData() {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][ANWSERSCORE];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = Utils.getRandomNumber(MIN, MAX);
@@ -30,9 +34,8 @@ public class Progression {
             String question = hideSequence(progression, indexToHide);
             roundsData[i][0] = question;
             roundsData[i][1] = answer;
-
         }
-        Engine.runGame(QUESTION, roundsData);
+        return roundsData;
     }
 
     public static int[] generateProgression(int firstNumberInSequence, int sequenceRandomStep, int sequencelength) {

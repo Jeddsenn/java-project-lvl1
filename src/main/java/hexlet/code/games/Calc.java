@@ -10,22 +10,22 @@ public class Calc {
     private static final String QUESTION = "What is the result of the expression?";
 
     public static void runGame() {
-        String[][] questionAndAnswer = generateRoundData();
-        Engine.runGame(QUESTION, questionAndAnswer);
+        String[][] gameData = generateRoundData();
+        Engine.runGame(QUESTION, gameData);
     }
 
     public static String[][] generateRoundData() {
-        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = Utils.getRandomNumber(MIN, MAX);
             int number2 = Utils.getRandomNumber(MIN, MAX);
             char operator = getRandomOperator();
             String calcQuestion = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
 
-            questionAndAnswer[i][0] = calcQuestion;
-            questionAndAnswer[i][1] = String.valueOf(calculate(operator, number, number2));
+            gameData[i][0] = calcQuestion;
+            gameData[i][1] = String.valueOf(calculate(operator, number, number2));
         }
-        return questionAndAnswer;
+        return gameData;
     }
 
 

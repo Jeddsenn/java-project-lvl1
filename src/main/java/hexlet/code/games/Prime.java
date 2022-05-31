@@ -12,16 +12,20 @@ public class Prime {
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame() {
+        String[][] gameData = generateRoundData();
+        Engine.runGame(QUESTION, gameData);
+    }
 
-        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+    public static String[][] generateRoundData() {
+        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = getRandomNumber(MIN, MAX);
             String question = String.valueOf(number);
             String answer = isPrime(number);
-            questionAndAnswer[i][0] = question;
-            questionAndAnswer[i][1] = answer;
+            gameData[i][0] = question;
+            gameData[i][1] = answer;
         }
-        Engine.runGame(QUESTION, questionAndAnswer);
+        return gameData;
     }
 
     public static String isPrime(int number) {
