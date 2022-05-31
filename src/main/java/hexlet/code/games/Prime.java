@@ -6,15 +6,16 @@ import hexlet.code.Engine;
 import static hexlet.code.Utils.getRandomNumber;
 
 public class Prime {
-    private static final int ANSWERSCORE = 2;
+    private static final int MIN = 1;
+    private static final int MAX = 100;
 
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame() {
 
-        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][ANSWERSCORE];
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int number = getRandomNumber();
+            int number = getRandomNumber(MIN, MAX);
             String question = String.valueOf(number);
             String answer = isPrime(number);
             questionAndAnswer[i][0] = question;

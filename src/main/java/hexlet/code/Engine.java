@@ -15,8 +15,8 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
-
         System.out.println(question);
+
         for (int i = 0; i < ROUNDS_COUNT; i++) {
             System.out.println("Question: " + gameData[i][0]);
             String playerAnswer = scanner.nextLine();
@@ -33,6 +33,4 @@ public class Engine {
         scanner.close();
         System.out.println("Congratulations, " + userName + "!");
     }
-
-
 }

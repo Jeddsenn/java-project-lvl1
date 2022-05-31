@@ -5,15 +5,16 @@ import hexlet.code.Utils;
 
 public class Calc {
 
-    private static final int ANSWERSCORE = 2;
+    private static final int MIN = 1;
+    private static final int MAX = 100;
     private static final String QUESTION = "What is the result of the expression?";
 
     public static void runGame() {
 
-        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][ANSWERSCORE];
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int number = Utils.getRandomNumber();
-            int number2 = Utils.getRandomNumber();
+            int number = Utils.getRandomNumber(MIN, MAX);
+            int number2 = Utils.getRandomNumber(MIN, MAX);
             char operator = getRandomOperator();
             String calcQuestion = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
 
