@@ -9,24 +9,29 @@ public class Engine {
     public static final int ROUNDS_COUNT = 3;
 
 
-    public static void runGame(String question, String[][] roundsData) {
+    public static void runGame(String description, String[][] roundsData) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
-        System.out.println(question);
+        System.out.println(description);
+
 
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            System.out.println("Question: " + roundsData[i][0]);
+            String question = roundsData[i][0];
+            String answer = roundsData[i][1];
+
+            System.out.println("Question: " + question);
             String playerAnswer = scanner.nextLine();
             System.out.println("Your answer: " + playerAnswer);
 
-            if (playerAnswer.equals(roundsData[i][1])) {
+            if (playerAnswer.equals(answer)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + playerAnswer + "'" + " is wrong answer. Correct answer was "
-                    + "'" + roundsData[i][1] + "'" + ". Let's try again, " + userName + "!");
+                    + "'" + answer + "'" + ". Let's try again, " + userName + "!");
+                scanner.close();
                 return;
             }
         }
