@@ -26,14 +26,13 @@ public class Engine {
             String playerAnswer = scanner.nextLine();
             System.out.println("Your answer: " + playerAnswer);
 
-            if (playerAnswer.equals(answer)) {
-                System.out.println("Correct!");
-            } else {
+            if (!playerAnswer.equals(answer)) {
                 System.out.println("'" + playerAnswer + "'" + " is wrong answer. Correct answer was "
                     + "'" + answer + "'" + ". Let's try again, " + userName + "!");
                 scanner.close();
                 return;
             }
+            System.out.println("Correct!");
         }
         scanner.close();
         System.out.println("Congratulations, " + userName + "!");
