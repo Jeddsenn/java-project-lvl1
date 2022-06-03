@@ -22,9 +22,16 @@ public class Even {
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = getRandomNumber(MIN, MAX);
             gameData[i][0] = String.valueOf(number);
-            gameData[i][1] = ((number % 2) == 0) ? "yes" : "no";
+            gameData[i][1] = isEven(number);
         }
         return gameData;
+    }
+
+    public static String isEven(int number) {
+        if ((number % 2) == 0) {
+            return "yes";
+        }
+        return "no";
     }
 }
 

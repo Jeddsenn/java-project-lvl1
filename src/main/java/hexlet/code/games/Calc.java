@@ -8,29 +8,33 @@ public class Calc {
     private static final int MIN = 1;
     private static final int MAX = 100;
     private static final String QUESTION = "What is the result of the expression?";
+    public static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void runGame() {
-        String[][] gameData = generateRoundData();
+        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            gameData[i] = generateRoundData();
+        }
         Engine.runGame(QUESTION, gameData);
     }
 
-    public static String[][] generateRoundData() {
-        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
-        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+    public static String[] generateRoundData() {
+
+            String[] gameData = new String[2];
+
             int number = Utils.getRandomNumber(MIN, MAX);
             int number2 = Utils.getRandomNumber(MIN, MAX);
             char operator = getRandomOperator();
-            String calcQuestion = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
+            String question = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
+            String answer = String.valueOf(calculate(operator, number, number2));
 
-            gameData[i][0] = calcQuestion;
-            gameData[i][1] = String.valueOf(calculate(operator, number, number2));
-        }
-        return gameData;
+            gameData[0] = question;
+            gameData[1] = answer;
+            return gameData;
     }
 
 
     public static int calculate(char operator, int number, int number2) {
-        int answer = 0;
         switch (operator) {
             case '+':
                 return number + number2;
@@ -44,8 +48,7 @@ public class Calc {
     }
 
     public static char getRandomOperator() {
-        char[] operators = {'+', '-', '*'};
-        int i = (int) (Math.random() * operators.length);
-        return operators[i];
+        int i = Utils.getRandomNumber(0, OPERATORS.length);
+        return OPERATORS[i];
     }
 }
