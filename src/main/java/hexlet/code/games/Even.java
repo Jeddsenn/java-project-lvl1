@@ -17,7 +17,6 @@ public class Even {
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             gameData[i] = generateRoundData();
         }
-
         Engine.runGame(DESCRIPTION, gameData);
     }
 
@@ -31,7 +30,7 @@ public class Even {
         gameData[0] = question;
         gameData[1] = answer;
         return gameData;
-        }
+    }
 
     public static String isEven(int number) {
         if ((number % 2) == 0) {

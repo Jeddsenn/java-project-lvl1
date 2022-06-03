@@ -12,19 +12,25 @@ public class GCD {
 
 
     public static void runGame() {
-        String[][] gameData = generateRoundData();
+        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            gameData[i] = generateRoundData();
+        }
         Engine.runGame(DESCRIPTION, gameData);
     }
 
-    public static String[][] generateRoundData() {
-        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
-        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int number = getRandomNumber(MIN, MAX);
-            int number2 = getRandomNumber(MIN, MAX);
-            String gcdQuestion = number + " " + number2;
-            gameData[i][0] = gcdQuestion;
-            gameData[i][1] = String.valueOf(findGCD(number, number2));
-        }
+    public static String[] generateRoundData() {
+        String[] gameData = new String[2];
+
+        int number = getRandomNumber(MIN, MAX);
+        int number2 = getRandomNumber(MIN, MAX);
+
+        String question = number + " " + number2;
+        String answer = String.valueOf(findGCD(number, number2));
+
+        gameData[0] = question;
+        gameData[1] = answer;
+
         return gameData;
     }
 

@@ -19,22 +19,24 @@ public class Progression {
 
 
     public static void runGame() {
-        String[][] gameData = generateRoundData();
+        String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            gameData[i] = generateRoundData();
+        }
         Engine.runGame(DESCRIPTION, gameData);
     }
 
-    public static String[][] generateRoundData() {
-        String[][] roundsData = new String[Engine.ROUNDS_COUNT][ANWSERSCORE];
-        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int firstNumber = Utils.getRandomNumber(MIN, MAX);
-            int step = Utils.getRandomNumber(MINPRGR, MAXPRGR);
-            int[] progression = generateProgression(firstNumber, step, SEQUENCE_LENGTH);
-            int indexToHide = Utils.getRandomNumber(MINPRGR, MAXPRGR);
-            String answer = String.valueOf(progression[indexToHide]);
-            String question = hideSequence(progression, indexToHide);
-            roundsData[i][0] = question;
-            roundsData[i][1] = answer;
-        }
+    public static String[] generateRoundData() {
+        String[] roundsData = new String[ANWSERSCORE];
+        int firstNumber = Utils.getRandomNumber(MIN, MAX);
+        int step = Utils.getRandomNumber(MINPRGR, MAXPRGR);
+        int[] progression = generateProgression(firstNumber, step, SEQUENCE_LENGTH);
+        int indexToHide = Utils.getRandomNumber(MINPRGR, MAXPRGR);
+
+        String answer = String.valueOf(progression[indexToHide]);
+        String question = hideSequence(progression, indexToHide);
+        roundsData[0] = question;
+        roundsData[1] = answer;
         return roundsData;
     }
 
