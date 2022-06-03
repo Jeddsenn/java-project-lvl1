@@ -20,17 +20,17 @@ public class Calc {
 
     public static String[] generateRoundData() {
 
-            String[] gameData = new String[2];
+        String[] gameData = new String[2];
 
-            int number = Utils.getRandomNumber(MIN, MAX);
-            int number2 = Utils.getRandomNumber(MIN, MAX);
-            char operator = getRandomOperator();
-            String question = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
-            String answer = String.valueOf(calculate(operator, number, number2));
+        int number = Utils.getRandomNumber(MIN, MAX);
+        int number2 = Utils.getRandomNumber(MIN, MAX);
+        char operator = getRandomOperator();
+        String question = Integer.toString(number) + " " + operator + " " + Integer.toString(number2);
+        String answer = String.valueOf(calculate(operator, number, number2));
 
-            gameData[0] = question;
-            gameData[1] = answer;
-            return gameData;
+        gameData[0] = question;
+        gameData[1] = answer;
+        return gameData;
     }
 
 
