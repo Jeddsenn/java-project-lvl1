@@ -7,7 +7,7 @@ public class Calc {
 
     private static final int MIN = 1;
     private static final int MAX = 100;
-    private static final String QUESTION = "What is the result of the expression?";
+    private static final String DESCRIPTION = "What is the result of the expression?";
     public static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void runGame() {
@@ -15,7 +15,7 @@ public class Calc {
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             gameData[i] = generateRoundData();
         }
-        Engine.runGame(QUESTION, gameData);
+        Engine.runGame(DESCRIPTION, gameData);
     }
 
     public static String[] generateRoundData() {

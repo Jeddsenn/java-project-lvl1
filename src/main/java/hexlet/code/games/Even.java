@@ -10,22 +10,28 @@ public class Even {
 
     private static final int MIN = 1;
     private static final int MAX = 100;
-    private static final String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runGame() {
-        String[][] gameData = generateRoundData();
-        Engine.runGame(QUESTION, gameData);
-    }
-
-    public static String[][] generateRoundData() {
         String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int number = getRandomNumber(MIN, MAX);
-            gameData[i][0] = String.valueOf(number);
-            gameData[i][1] = isEven(number);
+            gameData[i] = generateRoundData();
         }
-        return gameData;
+
+        Engine.runGame(DESCRIPTION, gameData);
     }
+
+    public static String[] generateRoundData() {
+        int number = getRandomNumber(MIN, MAX);
+        String[] gameData = new String[2];
+
+        String question = String.valueOf(number);
+        String answer = isEven(number);
+
+        gameData[0] = question;
+        gameData[1] = answer;
+        return gameData;
+        }
 
     public static String isEven(int number) {
         if ((number % 2) == 0) {

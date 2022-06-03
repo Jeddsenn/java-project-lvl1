@@ -13,14 +13,14 @@ public class Progression {
     private static final int MAX = 100;
     private static final int MINPRGR = 2;
     private static final int MAXPRGR = 10;
-    private static final String QUESTION = "What number is missing in the progression?";
+    private static final String DESCRIPTION = "What number is missing in the progression?";
 
     private static final String REPLACEMENT = "..";
 
 
     public static void runGame() {
         String[][] gameData = generateRoundData();
-        Engine.runGame(QUESTION, gameData);
+        Engine.runGame(DESCRIPTION, gameData);
     }
 
     public static String[][] generateRoundData() {

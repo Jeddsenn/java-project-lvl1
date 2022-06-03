@@ -6,14 +6,14 @@ import static hexlet.code.Utils.getRandomNumber;
 
 
 public class GCD {
-    private static final String QUESTION = "Find the greatest common divisor of given numbers.";
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
     private static final int MIN = 1;
     private static final int MAX = 100;
 
 
     public static void runGame() {
         String[][] gameData = generateRoundData();
-        Engine.runGame(QUESTION, gameData);
+        Engine.runGame(DESCRIPTION, gameData);
     }
 
     public static String[][] generateRoundData() {
