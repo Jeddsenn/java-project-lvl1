@@ -24,14 +24,17 @@ public class Prime {
         int number = getRandomNumber(MIN, MAX);
 
         String question = String.valueOf(number);
-        String answer = isPrime(number);
+        String answer = isPrime(number) ? "yes" : "no";
 
         gameData[0] = question;
         gameData[1] = answer;
         return gameData;
     }
 
-    public static String isPrime(int number) {
+    public static boolean isPrime(int number) {
+        if (number == 1) {
+            return false;
+        }
         int i = 2;
         boolean flag = false;
         while (i <= number / 2) {
@@ -42,10 +45,6 @@ public class Prime {
             }
             ++i;
         }
-        if (!flag) {
-            return "yes";
-        } else {
-            return "no";
-        }
+        return !flag;
     }
 }

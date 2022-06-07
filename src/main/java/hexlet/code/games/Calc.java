@@ -8,7 +8,7 @@ public class Calc {
     private static final int MIN = 1;
     private static final int MAX = 100;
     private static final String DESCRIPTION = "What is the result of the expression?";
-    public static final char[] OPERATORS = {'+', '-', '*'};
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void runGame() {
         String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
@@ -43,7 +43,7 @@ public class Calc {
             case '*':
                 return number * number2;
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Unexpected operator " + operator);
         }
     }
 

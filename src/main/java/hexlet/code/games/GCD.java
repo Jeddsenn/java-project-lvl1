@@ -10,7 +10,6 @@ public class GCD {
     private static final int MIN = 1;
     private static final int MAX = 100;
 
-
     public static void runGame() {
         String[][] gameData = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {

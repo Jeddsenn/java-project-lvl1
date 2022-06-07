@@ -8,11 +8,10 @@ import java.util.Arrays;
 public class Progression {
 
     private static final int SEQUENCE_LENGTH = 10;
-    private static final int ANWSERSCORE = 2;
     private static final int MIN = 1;
     private static final int MAX = 100;
-    private static final int MINPRGR = 2;
-    private static final int MAXPRGR = 10;
+    private static final int MIN_STEP = 2;
+    private static final int MAX_STEP = 10;
     private static final String DESCRIPTION = "What number is missing in the progression?";
 
     private static final String REPLACEMENT = "..";
@@ -27,11 +26,11 @@ public class Progression {
     }
 
     public static String[] generateRoundData() {
-        String[] roundsData = new String[ANWSERSCORE];
+        String[] roundsData = new String[2];
         int firstNumber = Utils.getRandomNumber(MIN, MAX);
-        int step = Utils.getRandomNumber(MINPRGR, MAXPRGR);
+        int step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
         int[] progression = generateProgression(firstNumber, step, SEQUENCE_LENGTH);
-        int indexToHide = Utils.getRandomNumber(MINPRGR, MAXPRGR);
+        int indexToHide = Utils.getRandomNumber(0, progression.length - 1);
 
         String answer = String.valueOf(progression[indexToHide]);
         String question = hideSequence(progression, indexToHide);

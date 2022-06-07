@@ -25,18 +25,15 @@ public class Even {
         String[] gameData = new String[2];
 
         String question = String.valueOf(number);
-        String answer = isEven(number);
+        String answer = (isEven(number) ? "yes" : "no");
 
         gameData[0] = question;
         gameData[1] = answer;
         return gameData;
     }
 
-    public static String isEven(int number) {
-        if ((number % 2) == 0) {
-            return "yes";
-        }
-        return "no";
+    public static boolean isEven(int number) {
+        return (number % 2) == 0;
     }
 }
 
