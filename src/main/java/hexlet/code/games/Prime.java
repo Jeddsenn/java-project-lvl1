@@ -38,7 +38,6 @@ public class Prime {
         int i = 2;
         boolean flag = false;
         while (i <= number / 2) {
-
             if (number % i == 0) {
                 flag = true;
                 break;
